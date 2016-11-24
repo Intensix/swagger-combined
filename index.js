@@ -39,6 +39,10 @@ app.get('/docs', function(req, res) {
                 for (key in i.definitions){
                     a.definitions[key] = i.definitions[key];
                 }
+
+		i.tags.forEach(function(item){
+			a.tags.push(item)
+		})
             }
             return a;
         }, false);
